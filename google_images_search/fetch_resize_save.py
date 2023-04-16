@@ -287,9 +287,11 @@ class FetchResizeSave(object):
         if self._custom_image_name:
             def increment_naming(dir_list, name, number=0):
                 if number:
-                    file_name = ''.join([name, '(', str(number), ')', ext])
+                    # file_name = ''.join([name, '(', str(number), ')', ext])
+                    file_name = ''.join([name, '_', str(number), ext])
                 else:
-                    file_name = ''.join([name, ext])
+                    # file_name = ''.join([name, ext])
+                    file_name = ''.join([name, '_', str(0), ext])
 
                 if file_name in dir_list:
                     return increment_naming(dir_list, name, number+1)
